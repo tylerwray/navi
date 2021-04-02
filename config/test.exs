@@ -20,3 +20,6 @@ config :navi, NaviWeb.Endpoint,
 
 # Print only warnings and errors during test
 config :logger, level: :warn
+
+# Mox
+config :navi, plaid: Navi.MockPlaid

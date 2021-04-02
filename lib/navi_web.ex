@@ -22,7 +22,6 @@ defmodule NaviWeb do
       use Phoenix.Controller, namespace: NaviWeb
 
       import Plug.Conn
-      import NaviWeb.Gettext
       alias NaviWeb.Router.Helpers, as: Routes
     end
   end
@@ -51,13 +50,6 @@ defmodule NaviWeb do
     end
   end
 
-  def channel do
-    quote do
-      use Phoenix.Channel
-      import NaviWeb.Gettext
-    end
-  end
-
   defp view_helpers do
     quote do
       # Use all HTML functionality (forms, tags, etc)
@@ -67,7 +59,6 @@ defmodule NaviWeb do
       import Phoenix.View
 
       import NaviWeb.ErrorHelpers
-      import NaviWeb.Gettext
       alias NaviWeb.Router.Helpers, as: Routes
     end
   end

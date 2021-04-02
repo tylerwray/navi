@@ -23,11 +23,20 @@ defmodule NaviWeb.ConnCase do
       import Plug.Conn
       import Phoenix.ConnTest
       import NaviWeb.ConnCase
+      import Mox
 
       alias NaviWeb.Router.Helpers, as: Routes
 
       # The default endpoint for testing
       @endpoint NaviWeb.Endpoint
+
+      setup :verify_on_exit!
+
+      def put_auth_token(conn) do
+        token = NaviWeb.Token.generate_and_sign!()
+
+        put_req_header(conn, "authorization", "Bearer #{token}")
+      end
     end
   end
 
