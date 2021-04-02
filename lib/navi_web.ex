@@ -58,7 +58,6 @@ defmodule NaviWeb do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
-      import NaviWeb.ErrorHelpers
       alias NaviWeb.Router.Helpers, as: Routes
     end
   end

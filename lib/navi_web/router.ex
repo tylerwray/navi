@@ -14,16 +14,11 @@ defmodule NaviWeb.Router do
     plug NaviWeb.JwtAuthPlug
   end
 
-  scope "/api", NaviWeb do
+  scope "/", NaviWeb do
     pipe_through :api
 
     post "/link_token", LinkTokenController, :create
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", NaviWeb do
-  #   pipe_through :api
-  # end
 
   # Enables LiveDashboard only for development
   #
